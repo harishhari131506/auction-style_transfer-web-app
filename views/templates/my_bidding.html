@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% include 'navbar.html' %}
+
+{% block title %}My bidding{% endblock %}
+
+{% block content %}
+
+    
+<div class="container-sm" style="font-family: 'Times New Roman', Times, serif;">
+
+    <table class="table table-info table-striped" style="margin-top: 10%;">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col"> Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Ending date</th>
+            <th scope="col">Winner</th>
+        </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            {% for product in products %}
+            <tr>
+                <th scope="row">{{ product.__index__ }}</th>
+                <td><a href="{{ url_for('product', id=product.id) }}">{{ product.name }}</a></td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.end_date }}</td>
+                {% if product.winner == None %}
+                    <td>Not announced yet</td>
+                {% else %}
+                    <td>{{ product.bid_by }}</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
+

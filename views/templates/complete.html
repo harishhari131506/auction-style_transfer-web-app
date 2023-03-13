@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Title</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap" rel="stylesheet">
+
+<style>
+  
+ body {
+  background-image: url('https://cdn.wallpapersafari.com/29/82/WmxNwM.jpg');
+ overflow: hidden;
+}
+body {
+height: 100vh;
+
+background-color: black;
+display: -webkit-box;
+display: flex;
+}
+
+/* Here using -webkit, we make angle
+of 45 degree of falling star */
+.sky {
+  margin-left: 350px;
+  margin-top: 0px;
+  padding-top: 0px;
+position: absolute;
+width: 100vw;
+height: 50vh;
+-webkit-transform: rotateZ(135deg);
+transform: rotateZ(135deg);
+}
+
+/* Here we are making roundabout balls */
+.star {
+position: absolute;
+left: 50%;
+top: 50%;
+height: 2px;
+border-radius: 885px;
+background: linear-gradient(-45deg,
+	#eef0f5, rgba(0, 0, 255, 0));
+
+-webkit-filter: drop-shadow(0 0 6px #eef1f8);
+filter: drop-shadow(0 0 6px #b8dd69);
+-webkit-animation: tail 3000ms ease-in-out infinite,
+	shooting 3000ms ease-in-out infinite;
+animation: tail 3000ms ease-in-out infinite,
+	shooting 3000ms ease-in-out infinite;
+}
+
+/* Here we add before and after effect to star */
+.star::before,
+.star::after {
+content: "";
+position: absolute;
+top: calc(50% - 1px);
+right: 0;
+height: 2px;
+background: linear-gradient(
+	-45deg,
+	rgba(0, 0, 255, 0),
+	#eaeef8,
+	rgba(0, 0, 255, 0)
+);
+-webkit-transform: translateX(50%) rotateZ(45deg);
+transform: translateX(50%) rotateZ(45deg);
+border-radius: 100%;
+-webkit-animation: shining 3000ms ease-in-out infinite;
+animation: shining 3000ms ease-in-out infinite;
+}
+.star::after {
+-webkit-transform: translateX(50%) rotateZ(-45deg);
+transform: translateX(50%) rotateZ(-45deg);
+}
+
+/* Here we are adding location of each
+nth-child, animations, delays, and
+before and after effects to each
+and every balls(stars) */
+.star:nth-child(1) {
+top: calc(50% - -119px);
+left: calc(50% - 43px);
+-webkit-animation-delay: 4000ms;
+animation-delay: 4000ms;
+}
+.star:nth-child(1)::before,
+.star:nth-child(1)::after {
+-webkit-animation-delay: 4000ms;
+animation-delay: 4000ms;
+}
+.star:nth-child(2) {
+top: calc(50% - -43px);
+left: calc(50% - 37px);
+-webkit-animation-delay: 5000ms;
+animation-delay: 5000ms;
+}
+.star:nth-child(2)::before,
+.star:nth-child(2)::after {
+-webkit-animation-delay: 5000ms;
+animation-delay: 5000ms;
+}
+.star:nth-child(3) {
+top: calc(50% - -40px);
+left: calc(50% - 222px);
+-webkit-animation-delay: 7000ms;
+animation-delay: 7000ms;
+}
+.star:nth-child(3)::before,
+.star:nth-child(3)::after {
+-webkit-animation-delay: 7000ms;
+animation-delay: 7000ms;
+}
+.star:nth-child(4) {
+top: calc(50% - -29px);
+left: calc(50% - 113px);
+-webkit-animation-delay: 7000ms;
+animation-delay: 7000ms;
+}
+.star:nth-child(4)::before,
+.star:nth-child(4)::after {
+-webkit-animation-delay: 7000ms;
+animation-delay: 7000ms;
+}
+.star:nth-child(5) {
+top: calc(50% - 146px);
+left: calc(50% - 112px);
+-webkit-animation-delay: 3000ms;
+animation-delay: 3000ms;
+}
+.star:nth-child(5)::before,
+.star:nth-child(5)::after {
+-webkit-animation-delay: 3000ms;
+animation-delay: 3000ms;
+}
+.star:nth-child(6) {
+top: calc(50% - -108px);
+left: calc(50% - 160px);
+-webkit-animation-delay: 3000ms;
+animation-delay: 3000ms;
+}
+.star:nth-child(6)::before,
+.star:nth-child(6)::after {
+-webkit-animation-delay: 3000ms;
+animation-delay: 3000ms;
+}
+.star:nth-child(7) {
+top: calc(50% - 52px);
+left: calc(50% - 72px);
+-webkit-animation-delay: 7000ms;
+animation-delay: 7000ms;
+}
+.star:nth-child(7)::before,
+.star:nth-child(7)::after {
+-webkit-animation-delay: 7000ms;
+animation-delay: 7000ms;
+}
+
+/* This code will help to generate
+effect in tail of star */
+@keyframes tail {
+0% {
+	width: 0;
+}
+30% {
+	width: 100px;
+}
+100% {
+	width: 0;
+}
+}
+
+/* This code will generate shining
+effect in head of star */
+@keyframes shining {
+0% {
+	width: 0;
+}
+50% {
+	width: 30px;
+}
+100% {
+	width: 0;
+}
+}
+
+/* Here we are adding webkit-animation
+to head of star for shining */
+@-webkit-keyframes shining {
+0% {
+	width: 0;
+}
+50% {
+	width: 30px;
+}
+100% {
+	width: 0;
+}
+}
+
+/* Here we are adding webkit-animation
+to tail of star */
+@-webkit-keyframes tail {
+0% {
+	width: 0;
+}
+30% {
+	width: 100px;
+}
+100% {
+	width: 0;
+}
+}
+
+/* Here we are adding webkit-animation
+for shooting effect */
+@-webkit-keyframes shooting {
+0% {
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+}
+100% {
+	-webkit-transform: translateX(270px);
+	transform: translateX(270px);
+}
+}
+
+/* Here we make shooting effect */
+@keyframes shooting {
+0% {
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+}
+100% {
+	-webkit-transform: translateX(270px);
+	transform: translateX(270px);
+}
+}
+.but button:hover {
+  background-color: #3e8e41;
+}
+
+</style>
+
+
+
+  
+</head>
+<body>
+  
+  <div class="sky">
+  
+    <!-- We are making divisions, every div.
+    represent a single roundabout balls -->
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+  </div>
+  <div class="offset-md-2 col-md-5" >
+    
+    
+	<h3  style="color: #ffffff;font-family: 'Dancing Script', cursive;margin-left: 125px;"> Style complete </h3>
+	
+	{% for image_name in image_names %}
+		<div>
+      <h3 style="color: #fff;font-family: 'Dancing Script', cursive;">Stylised Image</h3>
+			<img width="400px" height="300px" src="{{url_for('send_processed_image', filename=image_name, selected_style=selected_style)}}">
+      <h3 style="color: #fff;font-family: 'Dancing Script', cursive;">Uploaded Image</h3>
+			<img width="400px" height="300px" src="{{url_for('send_original_image', filename=image_name)}}">
+		</div>
+	{% endfor %}
+	
+	
+    
+		<div class="but">
+			<form action="/stylize" method="get">
+				<button type="submit" class="btn btn-warning"  style="margin-left: 150px;">Back</button>
+			</form>
+			<form action="/" method="get">
+		<button type="submit" class="btn btn-warning"  style="margin-left: 150px;">Home</button>
+	</form>
+	
+	
+	  </div>
+	  
+	  
+
+
+</div>
+
+</body>
+</html>
